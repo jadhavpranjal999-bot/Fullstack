@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Marks</h1>
+    <label class="input"> Name of Student</label>
+    <input type="text" id="Name" placeholder="Enter the Name of Student"/><br><br>
+    <label class="input"> English Marks</label>
+    <input type="number" id="English" placeholder="Enter the English Marks"/><br><br>
+    <label class="input"> Maths Marks</label>
+    <input type="number" id="Maths" placeholder="Enter the Maths Marks"/><br><br>
+    <label class="input"> Science Marks</label>
+    <input type="number" id="Science" placeholder="Enter the Science Marks"/><br><br>
+    <label class="input"> Marathi Meaks</label>
+    <input type="number" id="Marathi" placeholder="Enter the Marathi Marks"/><br><br>
+    <label class="input"> Hindi Marks</label>
+    <input type="number" id="Hindi" placeholder="Enter the Hindi Meaks"/><br><br>
+
+    <button onclick="calculate()">Result</button>
+    <h3 id="result"></h3>
+
+    <button onclick="modifyData()">Modify Data</button>
+
+<p id="msg"></p>
+
+
+    <button onclick="changeColor('red')">Red</button>
+
+    <button onclick="changeColor('green')">Green</button>
+
+    <button onclick="changeColor('blue')">Blue</button>
+
+    <script>
+        
+
+function calculate(){
+
+    let Name = document.getElementById("Name").value;
+    let English = Number(document.getElementById("English").value);
+    let Maths = Number(document.getElementById("Maths").value);
+    let Science = Number(document.getElementById("Science").value);
+    let Marathi = Number(document.getElementById("Marathi").value);
+    let Hindi = Number(document.getElementById("Hindi").value);
+
+    let total = English + Maths + Science + Marathi + Hindi;
+    let percentage = (total / 500) * 100;
+
+    document.getElementById("result").innerHTML = `
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th colspan="2">Student Marksheet</th>
+        </tr>
+        <tr>
+            <td><b>Name</b></td>
+            <td>${Name}</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td>${English}</td>
+        </tr>
+        <tr>
+            <td>Maths</td>
+            <td>${Maths}</td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td>${Science}</td>
+        </tr>
+        <tr>
+            <td>Marathi</td>
+            <td>${Marathi}</td>
+        </tr>
+        <tr>
+            <td>Hindi</td>
+            <td>${Hindi}</td>
+        </tr>
+        <tr>
+            <td><b>Total</b></td>
+            <td><b>${total}</b></td>
+        </tr>
+        <tr>
+            <td><b>Percentage</b></td>
+            <td><b>${percentage.toFixed(2)}%</b></td>
+        </tr>
+    </table>`;
+}
+
+function changeColor(color) {
+    document.body.style.backgroundColor = color;
+}
+
+function modifyData() {
+
+    let password = prompt("Enter Password:");
+
+    if (password === "admin123") {
+        document.getElementById("msg").innerHTML =
+            "✅ Modification Allowed!";
+    } else {
+        alert("❌ Incorrect Password! Modification Denied.");
+    }
+
+}
+
+</script>
+
+</body>
+</html>
