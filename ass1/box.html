@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Animation</title>
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            font-family: Arial;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .text {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            transition: 0.8s;
+        }
+
+        .box1 {
+            background-color: #ff4d4d;
+            left: 0;
+            top: 0;
+        }
+
+        .box2 {
+            background-color: #4d79ff;
+            right: 0;
+            top: 0;
+        }
+
+        .box3 {
+            background-color: #33cc66;
+            left: 0;
+            bottom: 0;
+        }
+
+        .box4 {
+            background-color: #ffcc00;
+            right: 0;
+            bottom: 0;
+        }
+
+        /* Animation */
+
+        .container:hover .box1 {
+            transform: translate(-70px, -70px) rotate(-45deg);
+        }
+
+        .container:hover .box2 {
+            transform: translate(70px, -70px) rotate(45deg);
+        }
+
+        .container:hover .box3 {
+            transform: translate(-70px, 70px) rotate(45deg);
+        }
+
+        .container:hover .box4 {
+            transform: translate(70px, 70px) rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="text">
+            WELCOME
+        </div>
+
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+
+    </div>
+
+</body>
+</html>

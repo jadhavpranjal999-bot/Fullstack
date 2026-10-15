@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-box">
+        <h1>Login Form</h1>
+        <p>Please enter your login details</p>
+
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username"
+                   placeholder="Enter username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password"
+                   placeholder="Enter password">
+
+            <label class="show-password">
+                <input type="checkbox" id="showPassword">
+                Show Password
+            </label>
+
+            <button type="submit">Login</button>
+
+            <p id="message"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
